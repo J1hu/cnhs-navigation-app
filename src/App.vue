@@ -1,13 +1,13 @@
 <script setup lang="ts">
 import NavBar from './components/NavBar.vue'
-import MainMap from './components/MainMap.vue'
-import RouteLocator from './components/RouteLocator.vue'
+import MainContainer from './components/MainContainer.vue';
 </script>
 
 <template>
-  <NavBar />
-  <MainMap />
-  <RouteLocator />
+  <div class="w-full h-screen">
+    <NavBar />
+    <MainContainer />
+  </div>
 </template>
 
 <style scoped>
