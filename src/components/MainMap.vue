@@ -1,10 +1,18 @@
 <script setup lang="ts">
+import { defineProps } from 'vue';
 
+const props = defineProps({
+    imagePath: String,
+})
+
+const hover = () => {
+    console.log(props.imagePath);
+}
 </script>
 
 <template>
-    <div class="flex justify-center flex-shrink-0">
-        <img class="image-size" src="../assets/overall-layout.png" alt="cnhs_map">
+    <div class="">
+        <img @mouseover="hover" :src="props.imagePath" alt="cnhs_map">
     </div>
 </template>
 

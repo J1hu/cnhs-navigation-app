@@ -1,57 +1,50 @@
 <script setup lang="ts">
-import { ref } from 'vue';
 import RouteLocator from './RouteLocator.vue';
+import MainMap from './MainMap.vue';
+import { ref, computed } from 'vue';
 
-const items = ref([
-  { id: 'classroom-buildings', name: 'Classroom Buildings', image: '../src/assets/classroom-buildings.png', color: 'bg-blue-700' },
-  { id: 'canteens', name: 'Canteens', image: '../src/assets/canteens.png', color: 'bg-green-700' },
-  { id: 'comfort-rooms', name: 'Comfort Rooms', image: '../src/assets/comfort-rooms.png', color: 'bg-yellow-800' },
-  { id: 'faculties', name: 'Faculty Rooms', image: '../src/assets/faculties.png', color: 'bg-violet-800' },
-  { id: 'guard-house', name: 'Guard House', image: '../src/assets/guard-house.png', color: 'bg-fuchsia-700' },
-  { id: 'library', name: 'Library', image: '../src/assets/library.png', color: 'bg-yellow-300' },
-  { id: 'paths', name: 'Paths', image: '../src/assets/paths.png', color: 'bg-gray-900' },
-  { id: 'roofs', name: 'Roofs', image: '../src/assets/roofs.png', color: 'bg-red-800' },
-  { id: 'walls', name: 'Walls', image: '../src/assets/walls.png', color: 'bg-green-400' }
-]);
+const items = [
+  { value: 'classroom-buildings', label: 'Classroom Buildings', color: 'bg-blue-700' },
+  { value: 'paths', label: 'Paths', color: 'bg-gray-900' },
+  { value: 'roofs', label: 'Roofs', color: 'bg-red-800' },
+  { value: 'canteens', label: 'Canteens', color: 'bg-green-700' },
+  { value: 'faculties', label: 'Faculty Rooms', color: 'bg-violet-800' },
+  { value: 'comfort-rooms', label: 'Comfort Rooms', color: 'bg-yellow-800' },
+  { value: 'guard-house', label: 'Guard House', color: 'bg-fuchsia-700' },
+  { value: 'library', label: 'Library', color: 'bg-yellow-300' }
+];
 
-const currentImage = ref('../src/assets/overall-layout.png');
+const imageName = ref('overall-layout');
 
-const changeImage = (imagePath: string) => {
-  currentImage.value = imagePath;
+const imagePath = computed(() => `../src/assets/${imageName.value}.png`);
+
+const changeImage = (value: string) => {
+  imageName.value = value;
 };
 
 const resetImage = () => {
-  currentImage.value = '../src/assets/overall-layout.png';
+  imageName.value = 'overall-layout';
 };
 </script>
 
 <template>
-    <div class="grid grid-flow-col">
-        <div class="m-1 border-4 border-solid rounded-lg">
-            <div class="text-2xl">Hover to highlight</div>
-            <div class="flex justify-center">
-                <div class="my-2">
-                  <div
-                    v-for="(item, index) in items"
-                    :key="index"
-                    :id="item.id"
-                    class="flex flex-row"
-                    @mouseover="changeImage(item.image)"
-                    @mouseleave="resetImage()"
-                  >
-                    <div :class="`w-3.5 h-3.5 my-1.5 mr-1 ${item.color}`"></div>
-                    {{ item.name }}
-                  </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-span-3 m-1 border-4 border-solid rounded-lg">
-          <div>
-            <img :src="currentImage" alt="Hovered Image" />
+  <div class="grid grid-flow-col">
+    <div class="m-1 border-4 border-solid rounded-lg">
+      <div class="m-2 text-2xl">Hover to highlight</div>
+      <div class="flex justify-center">
+        <div class="my-2">
+          <div v-for="item in items" :key="item.value" class="flex flex-row" @mouseover="changeImage(item.value)" @mouseleave="resetImage()">
+            <div class="w-3.5 h-3.5 my-1.5 mr-1" :class="item.color"></div>
+            {{ item.label }}
           </div>
         </div>
-        <div class="m-1 border-4 border-solid rounded-lg">
-            <RouteLocator />
-        </div>
+      </div>
     </div>
+    <div class="col-span-3 m-1 border-4 border-solid rounded-lg">
+      <MainMap :imagePath="imagePath" />
+    </div>
+    <div class="m-1 border-4 border-solid rounded-lg">
+      <RouteLocator />
+    </div>
+  </div>
 </template>
