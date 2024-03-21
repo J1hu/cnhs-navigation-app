@@ -4,7 +4,7 @@
 
 <template>
     <div class="flex justify-center flex-shrink-0">
-        <img class="image-size" src="../assets/cnhs-school-navigation-layout.png" alt="cnhs_map">
+        <img class="image-size" src="../assets/overall-layout.png" alt="cnhs_map">
     </div>
 </template>
 
