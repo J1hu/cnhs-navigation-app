@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import RouteLocator from './RouteLocator.vue';
 import MainMap from './MainMap.vue';
+import NavBar from './NavBar.vue';
 import { ref, computed } from 'vue';
 
 const items = [
@@ -28,23 +29,26 @@ const resetImage = () => {
 </script>
 
 <template>
-  <div class="grid grid-flow-col">
-    <div class="m-1 border-4 border-solid rounded-lg">
-      <div class="m-2 text-2xl">Hover to highlight</div>
-      <div class="flex justify-center">
-        <div class="my-2">
-          <div v-for="item in items" :key="item.value" class="flex flex-row" @mouseover="changeImage(item.value)" @mouseleave="resetImage()">
-            <div class="w-3.5 h-3.5 my-1.5 mr-1" :class="item.color"></div>
-            {{ item.label }}
+  <div class="h-screen">
+    <NavBar />
+    <div class="grid grid-flow-col">
+      <div class="border-4 border-solid rounded-lg">
+        <div class="text-2xl">Hover to highlight</div>
+        <div class="flex justify-center">
+          <div class="my-2">
+            <div v-for="item in items" :key="item.value" class="flex flex-row" @mouseover="changeImage(item.value)" @mouseleave="resetImage()">
+              <div class="w-3.5 h-3.5 my-1.5 mr-1" :class="item.color"></div>
+              {{ item.label }}
+            </div>
           </div>
         </div>
       </div>
-    </div>
-    <div class="col-span-3 m-1 border-4 border-solid rounded-lg">
-      <MainMap :imagePath="imagePath" />
-    </div>
-    <div class="m-1 border-4 border-solid rounded-lg">
-      <RouteLocator />
+      <div class="col-span-3 border-4 border-solid rounded-lg ">
+        <MainMap :imagePath="imagePath" />
+      </div>
+      <div class="border-4 border-solid rounded-lg">
+        <RouteLocator />
+      </div>
     </div>
   </div>
 </template>
