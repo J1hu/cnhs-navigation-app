@@ -3,7 +3,7 @@
 </script>
 
 <template>
-    <div class="flex justify-center">
+    <div class="flex justify-center flex-shrink-0">
         <img class="image-size" src="../assets/cnhs-school-navigation-layout.png" alt="cnhs_map">
     </div>
 </template>
