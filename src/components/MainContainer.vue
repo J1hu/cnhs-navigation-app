@@ -2,6 +2,7 @@
 import RouteLocator from './RouteLocator.vue';
 import MainMap from './MainMap.vue';
 import NavBar from './NavBar.vue';
+import RouteLocations from './RouteLocations.vue';
 import { ref, computed } from 'vue';
 
 const items = [
@@ -32,6 +33,7 @@ const resetImage = () => {
 <template>
   <div class="h-screen">
     <NavBar />
+    <RouteLocations />
     <div class="grid grid-flow-col">
       <div class="border-4 border-solid rounded-lg">
         <div class="text-2xl">Hover to highlight</div>
