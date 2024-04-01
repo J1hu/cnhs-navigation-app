@@ -1,18 +1,28 @@
 <script setup lang="ts">
-import { defineProps } from 'vue';
+import { defineProps, computed } from 'vue';
+import { useStore } from 'vuex';
+
+const store = useStore();
+
+const routing = computed(() => `../src/assets/routes/${store.state.currentRoute}.png`);
 
 const props = defineProps({
     imagePath: String,
 })
 
-const hover = () => {
-    console.log(props.imagePath);
-}
 </script>
 
 <template>
-    <div class="flex justify-center">
-        <img class="image-size" @mouseover="hover" :src="props.imagePath" alt="cnhs_map">
+    <div v-if="store.state.currentRoute == ''" class="flex justify-center">
+        <img class="image-size" :src="props.imagePath" alt="cnhs_map">
+    </div>
+    <div v-if="store.state.currentRoute" class="flex justify-center">
+        <p 
+            v-if="store.state.currentRoute"
+            class="underline"
+            @click="store.commit('setCurrentRoute', '');"
+        >clear selection</p>
+        <img class="image-size" :src="routing" alt="cnhs_map">
     </div>
 </template>
 

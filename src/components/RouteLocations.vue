@@ -7,21 +7,21 @@ const store = useStore();
 const isOpen = ref(false);
 
 const buttons = [
-    { text: 'Building 1', route: 'building1' },
-    { text: 'Building 2', route: 'building2' },
-    { text: 'Building 3', route: 'building3' },
-    { text: 'Building 4', route: 'building4' },
-    { text: 'Building 5', route: 'building5' },
-    { text: 'Building 6', route: 'building6' },
-    { text: 'Building 7', route: 'building7' },
-    { text: 'Building 8', route: 'building8' },
-    { text: 'Building 9', route: 'building9' },
-    { text: 'Building 10', route: 'building10' },
-    { text: 'Building 11', route: 'building11' },
-    { text: 'Building 12', route: 'building12' },
-    { text: 'Building 13', route: 'building13' },
-    { text: 'Building 14', route: 'building14' },
-    { text: 'Building 15', route: 'building15' },
+    { text: 'Building 1', route: 'b1' },
+    { text: 'Building 2', route: 'b2' },
+    { text: 'Building 3', route: 'b3' },
+    { text: 'Building 4', route: 'b4' },
+    { text: 'Building 5', route: 'b5' },
+    { text: 'Building 6', route: 'b6' },
+    { text: 'Building 7', route: 'b7' },
+    { text: 'Building 8', route: 'b8' },
+    { text: 'Building 9', route: 'b9' },
+    { text: 'Building 10', route: 'b10' },
+    { text: 'Building 11', route: 'b11' },
+    { text: 'Building 12', route: 'b12' },
+    { text: 'Building 13', route: 'b13' },
+    { text: 'Building 14', route: 'b14' },
+    { text: 'Building 15', route: 'b15' },
 ];
 
 const rows = computed(() => {
