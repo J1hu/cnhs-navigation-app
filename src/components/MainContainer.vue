@@ -12,7 +12,8 @@ const items = [
   { value: 'faculties', label: 'Faculty Rooms', color: 'bg-violet-800' },
   { value: 'comfort-rooms', label: 'Comfort Rooms', color: 'bg-yellow-800' },
   { value: 'guard-house', label: 'Guard House', color: 'bg-fuchsia-700' },
-  { value: 'library', label: 'Library', color: 'bg-yellow-300' }
+  { value: 'library', label: 'Library', color: 'bg-yellow-300' },
+  { value: 'satellite', label: 'Satellite', color: 'bg-gray-800' }
 ];
 
 const imageName = ref('overall-layout');
