@@ -4,6 +4,9 @@ import MainMap from './MainMap.vue';
 import NavBar from './NavBar.vue';
 import RouteLocations from './RouteLocations.vue';
 import { ref, computed } from 'vue';
+import { useStore } from 'vuex';
+
+const store = useStore();
 
 const items = [
   { value: 'classroom-buildings', label: 'Classroom Buildings', color: 'bg-blue-700' },
@@ -49,7 +52,7 @@ const resetImage = () => {
       <div class="col-span-3 border-4 border-solid rounded-lg ">
         <MainMap :imagePath="imagePath" />
       </div>
-      <div class="border-4 border-solid rounded-lg">
+      <div v-if="store.state.currentRoute" class="border-4 border-solid rounded-lg">
         <RouteLocator />
       </div>
     </div>

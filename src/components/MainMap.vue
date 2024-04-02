@@ -16,12 +16,12 @@ const props = defineProps({
     <div v-if="store.state.currentRoute == ''" class="flex justify-center">
         <img class="image-size" :src="props.imagePath" alt="cnhs_map">
     </div>
-    <div v-if="store.state.currentRoute" class="flex justify-center">
-        <p 
+    <p
             v-if="store.state.currentRoute"
-            class="underline"
+            class="text-right underline"
             @click="store.commit('setCurrentRoute', '');"
         >clear selection</p>
+    <div v-if="store.state.currentRoute" class="flex justify-center">
         <img class="image-size" :src="routing" alt="cnhs_map">
     </div>
 </template>

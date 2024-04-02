@@ -59,8 +59,7 @@ const handleButtonClick = (route: string) => {
                 :key="button.text"
                 type="button"
                 class="w-full max-w-xs px-4 py-2 mx-auto my-2 text-white bg-blue-500 rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-                @click="
-                    toggle, handleButtonClick(button.route)"
+                @click="toggle, handleButtonClick(button.route)"
             >
             {{ button.text }}
             </button>
