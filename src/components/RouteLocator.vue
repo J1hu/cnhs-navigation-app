@@ -28,7 +28,7 @@ const store = useStore();
             </div>
         </ul>
     </div>
-    <div v-if="store.state.currentRoute == 'b2'" class="w-72">
+    <div v-else-if="store.state.currentRoute == 'b2'" class="w-72">
         <div class="text-lg font-semibold text-center border-b-2">
             <p>Route to Building 2</p>
         </div>
@@ -55,7 +55,7 @@ const store = useStore();
             </div>
         </ul>
     </div>
-    <div v-if="store.state.currentRoute == 'b3'" class="w-72">
+    <div v-else-if="store.state.currentRoute == 'b3'" class="w-72">
         <div class="text-lg font-semibold text-center border-b-2">
             <p>Route to Building 3</p>
         </div>
@@ -74,7 +74,7 @@ const store = useStore();
             </div>
         </ul>
     </div>
-    <div v-if="store.state.currentRoute == 'b4'" class="w-72">
+    <div v-else-if="store.state.currentRoute == 'b4'" class="w-72">
         <div class="text-lg font-semibold text-center border-b-2">
             <p>Route to Building 4</p>
         </div>
@@ -101,8 +101,7 @@ const store = useStore();
             </div>
         </ul>
     </div>
-
-    <div v-if="store.state.currentRoute == 'b5'" class="w-72">
+    <div v-else-if="store.state.currentRoute == 'b5'" class="w-72">
         <div class="text-lg font-semibold text-center border-b-2">
             <p>Route to Building 5</p>
         </div>
@@ -121,8 +120,7 @@ const store = useStore();
             </div>
         </ul>
     </div>
-
-    <div v-if="store.state.currentRoute == 'b6'" class="w-72">
+    <div v-else-if="store.state.currentRoute == 'b6'" class="w-72">
         <div class="text-lg font-semibold text-center border-b-2">
             <p>Route to Building 6</p>
         </div>
@@ -145,7 +143,7 @@ const store = useStore();
             </div>
         </ul>
     </div>
-    <div v-if="store.state.currentRoute == 'b7'" class="w-72">
+    <div v-else-if="store.state.currentRoute == 'b7'" class="w-72">
         <div class="text-lg font-semibold text-center border-b-2">
             <p>Route to Building 7</p>
         </div>
@@ -168,8 +166,7 @@ const store = useStore();
             </div>
         </ul>
     </div>
-
-    <div v-if="store.state.currentRoute == 'b8'" class="w-72">
+    <div v-else-if="store.state.currentRoute == 'b8'" class="w-72">
         <div class="text-lg font-semibold text-center border-b-2">
             <p>Route to Building 8</p>
         </div>
@@ -188,8 +185,7 @@ const store = useStore();
             </div>
         </ul>
     </div>
-
-    <div v-if="store.state.currentRoute == 'b9'" class="w-72">
+    <div v-else-if="store.state.currentRoute == 'b9'" class="w-72">
         <div class="text-lg font-semibold text-center border-b-2">
             <p>Route to Building 9</p>
         </div>
@@ -208,8 +204,7 @@ const store = useStore();
             </div>
         </ul>
     </div>
-
-    <div v-if="store.state.currentRoute == 'b10'" class="w-72">
+    <div v-else-if="store.state.currentRoute == 'b10'" class="w-72">
         <div class="text-lg font-semibold text-center border-b-2">
             <p>Route to Building 10</p>
         </div>
@@ -232,8 +227,7 @@ const store = useStore();
             </div>
         </ul>
     </div>
-
-    <div v-if="store.state.currentRoute == 'b11'" class="w-72">
+    <div v-else-if="store.state.currentRoute == 'b11'" class="w-72">
         <div class="text-lg font-semibold text-center border-b-2">
             <p>Route to Building 11</p>
         </div>
@@ -252,8 +246,7 @@ const store = useStore();
             </div>
         </ul>
     </div>
-
-    <div v-if="store.state.currentRoute == 'b12'" class="w-72">
+    <div v-else-if="store.state.currentRoute == 'b12'" class="w-72">
         <div class="text-lg font-semibold text-center border-b-2">
             <p>Route to Building 12</p>
         </div>
@@ -276,8 +269,7 @@ const store = useStore();
             </div>
         </ul>
     </div>
-
-    <div v-if="store.state.currentRoute == 'b13'" class="w-72">
+    <div v-else-if="store.state.currentRoute == 'b13'" class="w-72">
         <div class="text-lg font-semibold text-center border-b-2">
             <p>Route to Building 13</p>
         </div>
@@ -308,8 +300,7 @@ const store = useStore();
             </div>
         </ul>
     </div>
-
-    <div v-if="store.state.currentRoute == 'b14'" class="w-72">
+    <div v-else-if="store.state.currentRoute == 'b14'" class="w-72">
         <div class="text-lg font-semibold text-center border-b-2">
             <p>Route to Building 14</p>
         </div>
@@ -336,8 +327,7 @@ const store = useStore();
             </div>
         </ul>
     </div>
-
-    <div v-if="store.state.currentRoute == 'b15'" class="w-72">
+    <div v-else-if="store.state.currentRoute == 'b15'" class="w-72">
         <div class="text-lg font-semibold text-center border-b-2">
             <p>Route to Building 15</p>
         </div>
@@ -364,7 +354,5 @@ const store = useStore();
             </div>
         </ul>
     </div>
-
-
 </template>
 

@@ -52,18 +52,18 @@ const handleButtonClick = (route: string) => {
         >
         Routes
         </button>
-    <div v-show="isOpen" class="mt-2">
-        <div v-for="row, rowIndex in rows" :key="rowIndex" class="flex flex-wrap justify-center mb-2">
-            <button
-                v-for="button in row"
-                :key="button.text"
-                type="button"
-                class="w-full max-w-xs px-4 py-2 mx-auto my-2 text-white bg-blue-500 rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-                @click="toggle, handleButtonClick(button.route)"
-            >
-            {{ button.text }}
-            </button>
+        <div v-show="isOpen" class="mt-2">
+            <div v-for="row, rowIndex in rows" :key="rowIndex" class="flex flex-wrap justify-center mb-2">
+                <button
+                    v-for="button in row"
+                    :key="button.text"
+                    type="button"
+                    class="w-full max-w-xs px-4 py-2 mx-auto my-2 text-white bg-blue-500 rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                    @click="toggle, handleButtonClick(button.route)"
+                >
+                {{ button.text }}
+                </button>
+            </div>
         </div>
-    </div>
     </div>
 </template>

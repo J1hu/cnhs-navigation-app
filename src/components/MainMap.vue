@@ -4,12 +4,13 @@ import { useStore } from 'vuex';
 
 const store = useStore();
 
-const routing = computed(() => `../src/assets/routes/${store.state.currentRoute}.png`);
+const routing = computed(() => `/assets/routes/${store.state.currentRoute}.png`);
 
 const props = defineProps({
     imagePath: String,
 })
 
+console.log(routing);
 </script>
 
 <template>
@@ -17,9 +18,9 @@ const props = defineProps({
         <img class="image-size" :src="props.imagePath" alt="cnhs_map">
     </div>
     <p
-            v-if="store.state.currentRoute"
-            class="text-right underline"
-            @click="store.commit('setCurrentRoute', '');"
+        v-if="store.state.currentRoute"
+        class="text-right underline"
+        @click="store.commit('setCurrentRoute', '');"
         >clear selection</p>
     <div v-if="store.state.currentRoute" class="flex justify-center">
         <img class="image-size" :src="routing" alt="cnhs_map">

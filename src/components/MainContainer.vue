@@ -22,7 +22,7 @@ const items = [
 
 const imageName = ref('overall-layout');
 
-const imagePath = computed(() => `../src/assets/${imageName.value}.png`);
+const imagePath = computed(() => `/assets/${imageName.value}.png`);
 
 const changeImage = (value: string) => {
   imageName.value = value;
