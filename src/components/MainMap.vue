@@ -4,7 +4,7 @@ import { useStore } from 'vuex';
 
 const store = useStore();
 
-const routing = computed(() => `/assets/routes/${store.state.currentRoute}.png`);
+const routing = computed(() => `../../src/assets/routes/${store.state.currentRoute}.png`);
 
 const props = defineProps({
     imagePath: String,
